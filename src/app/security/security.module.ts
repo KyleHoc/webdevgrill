@@ -1,0 +1,23 @@
+/**
+ * Title: security.module.ts
+ * Author: Kyle Hochdoerfer
+ * Date: 3/6/24
+*/
+
+// imports statements
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { SecurityRoutingModule } from './security-routing.module';
+import { SecurityComponent } from './security.component';
+
+@NgModule({
+  declarations: [
+    SecurityComponent
+  ],
+  imports: [
+    CommonModule,
+    SecurityRoutingModule
+  ]
+})
+export class SecurityModule { }
