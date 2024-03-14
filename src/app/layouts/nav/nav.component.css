@@ -1,0 +1,47 @@
+.nav-link{
+  font-size: 34px;
+  width: 20rem;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.first{
+  margin-left: 9%;
+}
+
+.last{
+  text-align: end
+}
+
+.col, .row{
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nav-logo{
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.blue{
+  color: #008AD4;
+}
+
+.green{
+  color: #009717
+}
+
+.orange{
+  color: #E05210;
+  margin-bottom: 20px;
+}
+
+nav{
+  padding-bottom: 20px;
+}
+
+.material-icons{
+  font-size: 45px;
+  margin-right: 2%;
+}

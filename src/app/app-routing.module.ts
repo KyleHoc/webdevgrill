@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
 
 // routes array with a path, component, and title for each route in the application (e.g. home, about, contact, etc.)
 const routes: Routes = [
@@ -19,12 +20,17 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
-        title: 'webdevgrill: Home' // title for the home page
+        title: 'Web Dev Grill: Home' // title for the home page
       },
       {
         path: 'home',
         component: HomeComponent,
-        title: 'webdevgrill: Home'
+        title: 'Web Dev Grill: Home'
+      },
+      {
+        path: 'menu',
+        component: MenuComponent,
+        title: "Web Dev Grill: Menu"
       }
     ]
   },

@@ -1,0 +1,138 @@
+.home{
+  background-color: #E8E8E8;
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero{
+  height: 30%;
+}
+
+img{
+
+}
+
+.menu-card{
+  background-color: white;
+}
+
+.option-cards{
+ margin-top: 2%
+}
+
+p{
+  font-size: 2rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.menu-card{
+  border-radius: 7px;
+  border: #008AD4 solid 15px;
+}
+
+.about-card{
+  border-radius: 7px;
+  border: #009717 solid 15px;
+  background-color: white;
+}
+
+.order-card{
+  border-radius: 7px;
+  border: #E05210 solid 15px;
+  background-color: white;
+  margin-top: 4%;
+  margin-bottom: 8%;
+}
+
+.menu-card h1{
+  color: #008AD4;
+  font-size: 3.5rem;
+  font-weight:bolder;
+  padding-top: 8%;
+}
+
+.about-card h1{
+  color: #009717;
+  font-size: 3.5rem;
+  font-weight:bolder;
+  padding-top:8%;
+}
+
+.order-card h1{
+  color: #E05210;
+  font-size: 3.5rem;
+  font-weight:bolder;
+  padding-top: 8%;
+}
+
+.about-row{
+  margin-top: 4%;
+}
+
+.button-home {
+  font-weight: 600;
+  margin-top: 3%;
+  background-color: #008AD4;
+  font-family: "Bree Serif", serif;
+  color: white;
+  margin-bottom: 5%;
+  width: 35%;
+  font-size: 2.5rem;
+  padding: 2%;
+  border-radius: 10px;
+  margin-right: 4%;
+}
+
+.button-about {
+  font-weight: 600;
+  margin-top: 3%;
+  background-color: #009717;
+  font-family: "Bree Serif", serif;
+  color: white;
+  margin-bottom: 5%;
+  width: 35%;
+  font-size: 2.5rem;
+  padding: 2%;
+  border-radius: 10px;
+  margin-right: 4%;
+}
+
+.button-order {
+  font-weight: 600;
+  margin-top: 3%;
+  background-color: #E05210;
+  font-family: "Bree Serif", serif;
+  color: white;
+  margin-bottom: 5%;
+  width: 40%;
+  font-size: 2.5rem;
+  padding: 2%;
+  border-radius: 10px;
+  margin-right: 4%;
+}
+
+
+.photo{
+  height: auto;
+  width: 40%;
+  position: relative;
+}
+
+.card-photo{
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 4%;
+}
+
+.about-photo{
+  height: 90%;
+  width: 90%
+}
+
+.order-photo{
+  height: 80%;
+  width: 90%;
+}
