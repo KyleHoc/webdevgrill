@@ -45,18 +45,18 @@ export class MenuComponent {
         //For every menu item:
         for(let item of this.menu){
           //If the item type is appetizer, push it onto the appetizer array
-          if(item.type == "appetizer"){
+          if(item.type === "appetizer"){
             this.appetizers.push(item)
           }
 
           //If the item type is entree, push it onto the entree array
-          if(item.type == "entree"){
-            this.appetizers.push(item)
+          if(item.type === "entree"){
+            this.entrees.push(item)
           }
 
           //If the item type is dessert, push it onto the desserts array
-          if(item.type == "dessert"){
-            this.appetizers.push(item)
+          if(item.type === "dessert"){
+            this.desserts.push(item)
           }
         }
       },

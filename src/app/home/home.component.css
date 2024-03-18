@@ -113,6 +113,10 @@ p{
   margin-right: 4%;
 }
 
+.button{
+  cursor: pointer;
+}
+
 
 .photo{
   height: auto;

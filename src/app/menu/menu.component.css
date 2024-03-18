@@ -1,7 +1,89 @@
 .menu-container{
   background-color: #E8E8E8;
+  font-family: "Bree Serif", serif;
+}
+
+.our-menu{
+  margin-left: 43%;
+  font-size: 58px;
+}
+
+.menu-section{
+  margin-bottom: 5%;
 }
 
 .blue{
   color: #008AD4;
+}
+
+.green{
+  color: #009717;
+}
+
+.orange{
+  color: #E05210
+}
+
+.app-card{
+  background-color: white;
+  padding-bottom: 1%;
+  border:#008AD4 solid 10px;
+  border-radius: 5px;
+}
+
+.entree-card{
+  background-color: white;
+  padding-bottom: 1%;
+  border:#009717 solid 10px;
+  border-radius: 5px;
+}
+
+.dessert-card{
+  background-color: white;
+  padding-bottom: 1%;
+  border:#E05210 solid 10px;
+  border-radius: 5px;
+}
+
+.course-head{
+  margin-left: 23%;
+  margin-bottom: 1%;
+  font-size: 64px;
+}
+
+h2{
+  font-size: 38px;
+}
+
+img{
+  height: 95%;
+  width: 95%;
+}
+
+p{
+  font-size: 24px;
+}
+
+.app-button{
+  background-color: #008AD4;
+  color: white;
+  padding: 3%;
+  width: 40%;
+  font-size: 22px;
+}
+
+.entree-button{
+  background-color: #009717;
+  color: white;
+  padding: 3%;
+  width: 40%;
+  font-size: 22px;
+}
+
+.dessert-button{
+  background-color: #E05210;
+  color: white;
+  padding: 3%;
+  width: 40%;
+  font-size: 22px;
 }

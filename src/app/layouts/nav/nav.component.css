@@ -45,3 +45,24 @@ nav{
   font-size: 45px;
   margin-right: 2%;
 }
+
+a{
+  color:black;
+  text-decoration: none;
+}
+
+.home-link:hover{
+  background-color:#008AD4;
+}
+
+.home-link:hover a{
+  color: white;
+}
+
+.menu-link:hover{
+  background-color:#009717;
+}
+
+.menu-link:hover a{
+  color: white;
+}
