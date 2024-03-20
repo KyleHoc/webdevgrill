@@ -1,0 +1,75 @@
+<div class="container-fluid pt-5">
+  <div class="row justify-content-center">
+    <div class="signin-container col-lg-6 col-md-10 col-sm-12">
+      <div class="card">
+
+        <!--heading 2 for signin container-->
+          <div class="card-title pt-5 text-align">
+            <h2>Employee Sign-In </h2>
+          </div>
+
+
+          <!--error message-->
+        <div class="alert alert-danger mx-auto text-align" role="alert" *ngIf="errorMessage">
+          <strong>{{errorMessage}}</strong>
+        </div>
+
+          <div class="m-5">
+          <!--sign in form-->
+          <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+            <fieldset>
+
+                <!-- validation required field email -->
+                <div *ngIf="signInForm.controls['email'].touched && signInForm.controls['email'].hasError('required')">
+                  <div class="alert alert-danger alert-dismissible fade show w-50 mx-auto text-align" role="alert">
+                    <strong>Email is Required!</strong>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+
+                <!-- validation required field email -->
+                <div *ngIf="signInForm.controls['email'].touched && signInForm.controls['email'].hasError('email')">
+                  <div class="alert alert-danger alert-dismissible fade show text-align mx-auto w-50" role="alert">
+                    <strong>Please enter a valid email!</strong>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+            <div class="row d-grid form-content">
+              <!--email form field-->
+              <div class="col-12 my-3 w-75 text">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" type="text" formControlName="email">
+              </div>
+
+                 <!-- validation required field email -->
+                 <div *ngIf="signInForm.controls['password'].touched && signInForm.controls['password'].hasError('email')">
+                  <div class="alert alert-danger alert-dismissible fade show text-align mx-auto w-50" role="alert">
+                    <strong>Please enter a valid email!</strong>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+
+              <!--password form field-->
+              <div class="col-12 my-3 w-75">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password" formControlName="password">
+              </div>
+            </div>
+            </fieldset>
+            <!--signin button-->
+            <div class="row w-50 text-align mx-auto pt-3">
+                <button class="btn button-lg button-signin" id="submit">Sign In</button>
+            </div>
+          </form>
+
+          <!--new user / register link-->
+          <div class="register">
+            <a routerLink="/security/registration">New user? Register here!</a>
+          </div>
+        </div>
+      </div>
+      <!--Return to Landing Page-->
+      <a routerLink="/" class="return-btn">Return</a>
+    </div>
+  </div>
+</div>

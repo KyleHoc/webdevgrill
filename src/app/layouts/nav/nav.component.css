@@ -66,3 +66,11 @@ a{
 .menu-link:hover a{
   color: white;
 }
+
+.orders-link:hover{
+  background-color:#E05210;
+}
+
+.orders-link:hover a{
+  color: white;
+}

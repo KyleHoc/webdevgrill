@@ -7,17 +7,30 @@
 // imports statements
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SecurityRoutingModule } from './security-routing.module';
 import { SecurityComponent } from './security.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { SigninComponent } from './signin/signin.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    SecurityComponent
+    SecurityComponent,
+    RegistrationComponent,
+    SigninComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
-    SecurityRoutingModule
+    SecurityRoutingModule,
+    FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class SecurityModule { }

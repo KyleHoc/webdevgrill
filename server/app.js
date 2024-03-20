@@ -10,7 +10,9 @@ const express = require('express')
 const createServer = require('http-errors')
 const path = require('path')
 
+//Require routing
 const menuRoute = require('./routes/menu');
+const securityRoute = require("./routes/security");
 
 // Create the Express app
 const app = express()
@@ -23,6 +25,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/webdevgrill')))
 
 
 app.use("/api/menu", menuRoute)
+app.use("/api/security", securityRoute);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {

@@ -5,8 +5,10 @@
     <div class="col justify-content-center nav-logo">
       <a routerLink="/home"><img src="./assets/logo.png" alt="Web Dev Grill text logo"></a>
     </div>
-    <div class="col nav-link menu-link">ABOUT US</div>
-    <div class="col nav-link orders-link">YOUR ORDERS</div>
+    <div class="col nav-link menu-link"><a routerLink="/about">ABOUT US</a></div>
+    <div class="col nav-link orders-link" *ngIf="!isSignedIn"><a routerLink="/security/signin">SIGN IN</a></div>
+    <div class="col nav-link orders-link" *ngIf="isSignedIn">YOUR ORDERS</div>
     <div class="col nav-link last"><span class="material-icons">shopping_cart</span></div>
   </div>
+  <a (click)="signout()" class="dropdown-item link">Sign out</a>
 </nav>
