@@ -17,7 +17,6 @@ export interface SessionUser {
   firstName: string;
   lastName: string
   email: string;
-
 }
 
 @Component({
@@ -55,7 +54,6 @@ export class SigninComponent {
   signIn() {
     //set isLoading to true and get Id from form
     this.isLoading = true;
-    console.log("SigninForm:", this.signInForm.value);
     let email = this.signInForm.controls['email'].value;
     let password = this.signInForm.controls['password'].value
 

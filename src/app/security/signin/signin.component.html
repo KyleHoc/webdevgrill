@@ -1,11 +1,11 @@
-<div class="container-fluid pt-5">
+<div class="signin-container pt-5">
   <div class="row justify-content-center">
-    <div class="signin-container col-lg-6 col-md-10 col-sm-12">
-      <div class="card">
+    <div class="inner col-lg-6 col-md-10 col-sm-12">
+      <div class="card mt-5">
 
         <!--heading 2 for signin container-->
-          <div class="card-title pt-5 text-align">
-            <h2>Employee Sign-In </h2>
+          <div class="card-title pt-5 text-center">
+            <h2>Customer Sign-In</h2>
           </div>
 
 
@@ -37,7 +37,7 @@
             <div class="row d-grid form-content">
               <!--email form field-->
               <div class="col-12 my-3 w-75 text">
-                <label for="email">Email</label>
+                <label for="email">Email:</label>
                 <input id="email" class="form-control" type="text" formControlName="email">
               </div>
 
@@ -51,7 +51,7 @@
 
               <!--password form field-->
               <div class="col-12 my-3 w-75">
-                <label for="password">Password</label>
+                <label for="password">Password:</label>
                 <input id="password" class="form-control" type="password" formControlName="password">
               </div>
             </div>
@@ -63,8 +63,8 @@
           </form>
 
           <!--new user / register link-->
-          <div class="register">
-            <a routerLink="/security/registration">New user? Register here!</a>
+          <div class="register mt-3">
+            <a class="register-link" routerLink="/security/registration">New user? Register here!</a>
           </div>
         </div>
       </div>

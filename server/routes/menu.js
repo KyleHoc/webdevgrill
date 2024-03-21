@@ -38,4 +38,32 @@ router.get("/", (req, res, next) => {
   }
 })
 
+//API for findMenuItemByName
+router.get("/:name", (req, res, next) => {
+  try {
+    //Get the dish name from the request parameters
+    let dishName = req.params;
+
+    //Access the database and make a query to find the requested dish
+    mongo(async db => {
+      const dish = await db.collection("dishes").findOne(dishName)
+
+      // If no dish is found output an error message
+      if (!dish) {
+        const err = new Error("Menu item not found");
+        err.status = 404;
+        console.log("err", err);
+        next(err);
+        return;
+      }
+      //If the dish is found, return it as a response in JSON format
+      res.json(dish);
+    }, next);
+  } catch (err) {
+    //Error handling
+    console.error("Error:", err);
+    next(err);
+  }
+})
+
 module.exports = router;

@@ -1,37 +1,51 @@
-<form [formGroup]="registrationForm" (ngSubmit)="register()">
+<div class="registration-container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-6 col-md-10 col-sm-12 inner mt-5">
+      <div class="card">
 
-  <div *ngIf="errorMessage">
-    <div class="alert alert-danger font" role="alert">
-      {{ errorMessage }}
+        <div class="card-title pt-5 text-center mb-5">
+          <h2>User Registration</h2>
+        </div>
+
+        <form [formGroup]="registrationForm" (ngSubmit)="register()">
+
+          <div *ngIf="errorMessage">
+            <div class="alert alert-danger font" role="alert">
+              {{ errorMessage }}
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-4">
+              <label for="firstName">First Name:</label>
+              <input id="firstName" class="form-control" type="text" formControlName="firstName">
+            </div>
+
+            <div class="col-lg-4">
+              <label for="lastName">Last Name:</label>
+              <input id="lastName" class="form-control" type="text" formControlName="lastName">
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-4">
+              <label for="email">Email Address:</label>
+              <input id="email" class="form-control" type="email" formControlName="email">
+            </div>
+
+            <div class="col-lg-4">
+              <label for="password">Password:</label>
+              <input id="password" class="form-control" type="password" formControlName="password">
+            </div>
+          </div>
+
+          <div class="row w-50 text-align mx-auto pt-3 mb-5 mt-3">
+            <button class="btn button-lg button-register" id="submit">SUBMIT</button>
+        </div>
+
+        </form>
+      </div>
+      <a class="nav-link" routerLink="/security/signin">Return</a>
     </div>
   </div>
-
-  <div class="row justify-content-center">
-    <div class="col-lg-4">
-      <label for="firstName">First Name:</label>
-      <input id="firstName" class="form-control" type="text" formControlName="firstName">
-    </div>
-
-    <div class="col-lg-4">
-      <label for="lastName">Last Name:</label>
-      <input id="lastName" class="form-control" type="text" formControlName="lastName">
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-lg-4">
-      <label for="email">Email Address:</label>
-      <input id="email" class="form-control" type="email" formControlName="email">
-    </div>
-
-    <div class="col-lg-4">
-      <label for="password">Password:</label>
-      <input id="password" class="form-control" type="password" formControlName="password">
-    </div>
-  </div>
-
-  <button class="col btn button-register w-50" id="submit" value="submit">SUBMIT</button>
-
-</form>
-
-<a class="nav-link" routerLink="/security/signin">Return</a>
+</div>

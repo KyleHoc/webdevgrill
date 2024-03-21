@@ -74,3 +74,15 @@ a{
 .orders-link:hover a{
   color: white;
 }
+
+.signout{
+  margin-left: 80%;
+  color:#008AD4;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.signout:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

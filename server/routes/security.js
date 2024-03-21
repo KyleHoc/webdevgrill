@@ -42,6 +42,7 @@ const registerSchema = {
     password: { type: 'string'},
     firstName: { type: 'string'},
     lastName: { type: 'string'},
+    cart: { type: 'array'}
   },
   required: [
     'email',
@@ -85,8 +86,6 @@ router.post('/signin', async(req, res) =>{
 
         //If the password is valid
         if (passwordIsValid) {
-          // Set time of last login
-
           //Output a message stating that the user has logged in and send it as a response
           console.log('User logged in');
           res.send(user);
@@ -159,8 +158,9 @@ router.post('/register', (req, res, next) => {
      // Get the user with last empId based on ascending order
      const latestuser = users[users.length - 1];
 
-     // Set the newempId as the latest empId plus 1.
-     const newEmpId = latestuser.userId + 1;
+     // Set the new user id as the latest empId plus 1.
+     const tempInt = parseInt(latestuser.userId)
+     const newEmpId = (tempInt + 1).toString();
 
      // Create newUser to be added to database
      const newUser = {
@@ -169,6 +169,7 @@ router.post('/register', (req, res, next) => {
       password: hashedPassword,
       firstName: user.firstName,
       lastName: user.lastName,
+      cart: []
      }
 
      //Output new user object
@@ -176,9 +177,6 @@ router.post('/register', (req, res, next) => {
 
      // push newUser object to the users collection
      const result = await db.collection('users').insertOne(newUser);
-
-     //returns _id to the console
-     console.log("result", result._id);
 
      // send the inserted _id
      res.status(201).send({ id: result.insertedId });

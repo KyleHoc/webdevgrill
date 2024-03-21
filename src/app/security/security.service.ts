@@ -1,21 +1,23 @@
 
 /**
  * Title: security.service.ts
- * Author: Professor Richard Krasso
- * Modified by: Jocelyn Dupuis
- *  Date: 02/17/24
- * Description: security service for sign in for  BcRS
+ * Author: Kyle Hochdoerfer
+ *  Date: 03/19/24
+ * Description: security service for Web Dev Grill
 */
 
+//Import statements
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserModel } from './user-model';
 
+//Create and export security service
 @Injectable({
   providedIn: 'root'
 })
 export class SecurityService {
 
+  //Create a constructor that passes in HttpClient
   constructor(private http: HttpClient) { }
 
   // Pathway for signIn

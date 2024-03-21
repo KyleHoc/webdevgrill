@@ -1,0 +1,49 @@
+.signin-container{
+  background-color: #E8E8E8;
+  font-family: "Bree Serif", serif;
+}
+
+h2{
+  color: #009717;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+label{
+  color: #009717;
+  font-size: 26px;
+}
+
+.alert{
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif
+}
+
+.card{
+  border:#009717 solid 10px;
+}
+
+.button-signin{
+  background-color:#009717;
+  color: white;
+  font-size: 26px;
+  padding: 2%;
+}
+
+.register-link{
+  font-size: 24px;
+  color: #008AD4;
+}
+
+.return-btn{
+  font-size: 26px;
+  color:#008AD4
+}
+
+input{
+  font-size: 22px;
+  padding: 1%;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:600;
+  border: black solid 1px;
+}

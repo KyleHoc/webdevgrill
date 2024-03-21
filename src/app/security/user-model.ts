@@ -7,7 +7,7 @@
 
 //Create and export the user model
 export interface UserModel {
-  userId: number;
+  userId: string;
   email: string;
   password: string;
   firstName: string;

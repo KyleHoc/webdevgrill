@@ -10,5 +10,5 @@
     <div class="col nav-link orders-link" *ngIf="isSignedIn">YOUR ORDERS</div>
     <div class="col nav-link last"><span class="material-icons">shopping_cart</span></div>
   </div>
-  <a (click)="signout()" class="dropdown-item link">Sign out</a>
+  <a (click)="signout()" class="dropdown-item link signout" *ngIf="isSignedIn">Sign Out</a>
 </nav>

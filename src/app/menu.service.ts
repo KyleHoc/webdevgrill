@@ -21,4 +21,9 @@ export class MenuService {
   findAllMenuItems(){
     return this.http.get('/api/menu/')
   }
+
+  //Returns http request for finding a menu document based on the provided name
+  findMenuItemByName(name: string){
+    return this.http.get('/api/menu/' + name)
+  }
 }

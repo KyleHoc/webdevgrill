@@ -42,7 +42,7 @@ export class RegistrationComponent {
   register(){
     //Create a user object based on user input
     const user: UserModel = {
-      userId: 1111, //Temporary ID until the API sets it
+      userId: '111', //Temporary ID until the API sets it
       email: this.registrationForm.controls['email'].value,
       password: this.registrationForm.controls['password'].value,
       firstName: this.registrationForm.controls['firstName'].value,
