@@ -1,5 +1,12 @@
 <div class="menu-container">
   <div class="row head">
+
+    <div *ngIf="successMessage">
+      <div class="alert alert-success font" role="alert">
+        {{ successMessage }}
+      </div>
+    </div>
+
     <h1 class="our-menu">Our Menu</h1>
   </div>
   <div class="menu-section">
@@ -22,7 +29,7 @@
         </div>
 
         <div class="row justify-content-center">
-          <div class="app-button">
+          <div class="app-button" (click)="addToCart(app)">
             Add to Cart
           </div>
         </div>

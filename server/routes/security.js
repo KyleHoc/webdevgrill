@@ -54,6 +54,28 @@ const registerSchema = {
   additionalProperties: false
 }
 
+//Create a schema for updating the user
+const updateSchema = {
+  type: 'object',
+  properties: {
+    userId: { type: 'string'},
+    email: { type: 'string'} ,
+    password: { type: 'string'},
+    firstName: { type: 'string'},
+    lastName: { type: 'string'},
+    cart: { type: 'array'}
+  },
+  required: [
+    'email',
+    'password',
+    'firstName',
+    'lastName',
+    'userId',
+    'cart'
+  ],
+  additionalProperties: false
+}
+
 //signin API
 router.post('/signin', async(req, res) =>{
   try {
@@ -115,7 +137,7 @@ router.post('/signin', async(req, res) =>{
   }
 })
 
-// registerUser API
+//registerUser API
 router.post('/register', (req, res, next) => {
   try {
     //grab input from user
@@ -145,7 +167,7 @@ router.post('/register', (req, res, next) => {
     console.log('Current users:', users);
 
     // if email is already in use, return 400 error
-    let emailInUse = users.find(employees => employees.email === user.email)
+    let emailInUse = users.find(customers => customers.email === user.email)
     if (emailInUse) {
       const err = new Error("Bad Request")
       err.status = 400;
@@ -155,16 +177,16 @@ router.post('/register', (req, res, next) => {
       return
      }
 
-     // Get the user with last empId based on ascending order
+     // Get the user with last user Id based on ascending order
      const latestuser = users[users.length - 1];
 
-     // Set the new user id as the latest empId plus 1.
+     // Set the new user id as the latest userId plus 1.
      const tempInt = parseInt(latestuser.userId)
-     const newEmpId = (tempInt + 1).toString();
+     const newUserId = (tempInt + 1).toString();
 
      // Create newUser to be added to database
      const newUser = {
-      userId: newEmpId,
+      userId: newUserId,
       email: user.email,
       password: hashedPassword,
       firstName: user.firstName,
@@ -181,6 +203,88 @@ router.post('/register', (req, res, next) => {
      // send the inserted _id
      res.status(201).send({ id: result.insertedId });
    }, next);
+
+  } catch (err) {
+    console.error("Error:", err);
+    next(err);
+  }
+})
+
+//API for findUserById
+router.get("/:userId", (req, res, next) => {
+  try {
+    //Get the user ID from the request parameters
+    let userId = req.params;
+
+    //Access the database and make a query to find the requested user
+    mongo(async db => {
+      const user = await db.collection("users").findOne(userId)
+
+      //If no user is found output an error message
+      if (!user) {
+        const err = new Error("User ID could not be found");
+        err.status = 404;
+        console.log("err", err);
+        next(err);
+        return;
+      }
+      //If the user is found, return it as a response in JSON format
+      res.json(user);
+    }, next);
+  } catch (err) {
+    //Error handling
+    console.error("Error:", err);
+    next(err);
+  }
+})
+
+//updateUser
+router.put('/:userId', (req, res, next) => {
+  try {
+
+     //Hold the user ID from the request in a variable
+     let { userId } = req.params;
+
+     // Variables Create
+     const { user } =  req.body;
+     const validator = ajv.compile(updateSchema);
+     const isValid = validator(user);
+
+     // 400 if user input isn't validated
+     if (!isValid) {
+       const err = new Error('Bad Request');
+       err.status = 400;
+       err.errors = validator.errors;
+       console.log('req.body validation failed', err)
+       next(err);
+       return;
+     }
+
+     //Query the database and update user with the provided ID
+     mongo(async db => {
+      const result = await db.collection("users").updateOne(
+        {userId},
+        {$set: {
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          cart: user.cart
+        }}
+        );
+        console.log(result);
+
+         // If the user was not updated, return a 404 status code.
+        if (!result.modifiedCount) {
+          const err = new Error('Unable to update record for ID' + userId);
+          err.status = 404;
+          console.error('err', err);
+          next(err);
+          return; //return to exit the function
+          }
+
+       // Send a success response with a 204 status code.
+      res.status(204).send();
+    }, next);
 
   } catch (err) {
     console.error("Error:", err);

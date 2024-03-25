@@ -8,6 +8,7 @@
 //Import statements
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserModel } from './security/user-model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,15 @@ export class MenuService {
   //Returns http request for finding a menu document based on the provided name
   findMenuItemByName(name: string){
     return this.http.get('/api/menu/' + name)
+  }
+
+  //Returns http request for finding a user document based on the provided ID
+  findUserById(id: string){
+    return this.http.get('/api/security/' + id)
+  }
+
+  //Returns http request for updating a user
+  updateUser(id: string, user: UserModel){
+    return this.http.put('api/security/' + id, { user })
   }
 }
