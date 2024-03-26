@@ -13,7 +13,7 @@ import { UserModel } from '../user-model';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
   //Define variables for error message, session user, and isloading
