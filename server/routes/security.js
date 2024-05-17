@@ -42,14 +42,16 @@ const registerSchema = {
     password: { type: 'string'},
     firstName: { type: 'string'},
     lastName: { type: 'string'},
-    cart: { type: 'array'}
+    cart: { type: 'array'},
+    total: { type: 'number'}
   },
   required: [
     'email',
     'password',
     'firstName',
     'lastName',
-    'userId'
+    'userId',
+    'total'
   ],
   additionalProperties: false
 }
@@ -63,7 +65,8 @@ const updateSchema = {
     password: { type: 'string'},
     firstName: { type: 'string'},
     lastName: { type: 'string'},
-    cart: { type: 'array'}
+    cart: { type: 'array'},
+    total: { type: 'number'}
   },
   required: [
     'email',
@@ -71,7 +74,8 @@ const updateSchema = {
     'firstName',
     'lastName',
     'userId',
-    'cart'
+    'cart',
+    'total'
   ],
   additionalProperties: false
 }
@@ -191,7 +195,8 @@ router.post('/register', (req, res, next) => {
       password: hashedPassword,
       firstName: user.firstName,
       lastName: user.lastName,
-      cart: []
+      cart: [],
+      total: 0
      }
 
      //Output new user object
@@ -268,7 +273,8 @@ router.put('/:userId', (req, res, next) => {
           email: user.email,
           firstName: user.firstName,
           lastName: user.lastName,
-          cart: user.cart
+          cart: user.cart,
+          total: user.total
         }}
         );
         console.log(result);

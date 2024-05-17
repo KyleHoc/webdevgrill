@@ -47,7 +47,8 @@ export class RegistrationComponent {
       password: this.registrationForm.controls['password'].value,
       firstName: this.registrationForm.controls['firstName'].value,
       lastName: this.registrationForm.controls['lastName'].value,
-      cart: []
+      cart: [],
+      total: 0
     }
 
     //Verify that all fields have been filled out and display an error message in the event they are not

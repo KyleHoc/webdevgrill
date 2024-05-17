@@ -1,58 +1,56 @@
-.nav-link{
-  font-size: 34px;
-  width: 20rem;
-  text-align: center;
-  margin-top: 2%;
-}
+@import '../../../styles.scss';
 
-.first{
-  margin-left: 9%;
-}
-
-.last{
-  text-align: end
+.navbar-custom{
+  /*background-color: #E8E8E8;*/
+  background-color: #E8E8E8;
+  border-bottom:#092671 solid 10px;
 }
 
 .col, .row{
-  font-family: "Bree Serif", serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.nav-logo{
-  font-weight: 900;
-  font-size: 50px;
+.nav-row{
+  width: 100%;
 }
 
-.blue{
-  color: #008AD4;
+.nav-item{
+  display:flex;
+  align-items: center;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
-.green{
-  color: #009717
+.navbar-nav{
+  width: 90%;
 }
 
-.orange{
+.navbar-brand{
+  color: #092671;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.dev{
   color: #E05210;
-  margin-bottom: 20px;
-}
-
-nav{
-  padding-bottom: 20px;
 }
 
 .material-icons{
-  font-size: 45px;
+  font-size: 3rem;
   margin-right: 2%;
 }
 
 a{
   color:black;
   text-decoration: none;
+  font-size: 1.3rem;
 }
 
 .home-link:hover{
-  background-color:#008AD4;
+  background-color:#092671;
 }
 
 .home-link:hover a{
@@ -60,7 +58,7 @@ a{
 }
 
 .menu-link:hover{
-  background-color:#009717;
+  background-color:#092671;
 }
 
 .menu-link:hover a{
@@ -68,7 +66,7 @@ a{
 }
 
 .orders-link:hover{
-  background-color:#E05210;
+  background-color:#092671;
 }
 
 .orders-link:hover a{
@@ -76,13 +74,98 @@ a{
 }
 
 .signout{
-  margin-left: 80%;
   color:#008AD4;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 16px;
+  margin-left: auto;
 }
 
 .signout:hover{
   cursor: pointer;
   text-decoration: underline;
+}
+
+.last{
+  text-align: start;
+}
+
+img{
+  width: 40%;
+}
+
+@media (max-width: 400px){
+  .navbar-brand{
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 0) {
+
+  img{
+    width: 45%;
+  }
+
+  .nav-link{
+    text-align: center;
+  }
+
+  .last{
+    text-align: center;
+  }
+}
+
+@media (min-width: $sm) {
+  .nav-link{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3%;
+    padding: 10px;
+  }
+
+  .last{
+    text-align: center;
+  }
+}
+
+@media (min-width: $md) {
+  .nav-link{
+    width: 10rem;
+    font-size: 1.5rem;
+  }
+
+  .last{
+    text-align: center;
+  }
+
+  img{
+    width: 60%;
+  }
+}
+
+@media (min-width: $lg) {
+  img{
+    width: 40%;
+  }
+}
+
+
+
+@media (min-width: $xl) {
+  .nav-link{
+    font-size: 28px;
+    width: 15rem;
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  .nav-logo{
+    margin-left: 4%;
+  }
+
+  .last{
+    text-align: center;
+  }
+
+  img{
+    width: 40%;
+  }
 }

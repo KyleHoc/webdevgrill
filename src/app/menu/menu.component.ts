@@ -22,7 +22,9 @@ export class MenuComponent {
   //Initialize menu and error message variables
   menu: any;
   errorMessage: string;
-  successMessage: string;
+  appSuccessMessage: string;
+  entSuccessMessage: string;
+  desSuccessMessage: string;
 
   //Initialize variables for each type of menu object
   appetizers: any;
@@ -43,7 +45,9 @@ export class MenuComponent {
     this.entrees = []
     this.desserts = []
     this.errorMessage = ''
-    this.successMessage = ''
+    this.appSuccessMessage = ''
+    this.entSuccessMessage = ''
+    this.desSuccessMessage = ''
 
     //Subscribe to the menu service using the menu service's find all menu items function
     this.menuService.findAllMenuItems().subscribe({
@@ -113,48 +117,85 @@ export class MenuComponent {
 
   //Function for adding a menu item to the user's cart
   addToCart(dish: any){
-    //Create a newUser variable as an instance of user model
-    let newUser = {} as UserModel;
+    if(!this.isSignedIn){
+      //Local storage
 
-    //Set all user fields to match the currently logged in user's information
-    newUser.firstName = this.user.firstName;
-    newUser.lastName = this.user.lastName;
-    newUser.email = this.user.email;
-    newUser.password = this.user.password;
-    newUser.userId = this.user.userId;
-    newUser.cart = this.user.cart
+    } else {
+      //Create a newUser variable as an instance of user model
+      let newUser = {} as UserModel;
 
-    //Add the new item to the user's cart
-    newUser.cart.push(dish);
-    console.log(this.user.userId)
+      //Set all user fields to match the currently logged in user's information
+      newUser.firstName = this.user.firstName;
+      newUser.lastName = this.user.lastName;
+      newUser.email = this.user.email;
+      newUser.password = this.user.password;
+      newUser.userId = this.user.userId;
+      newUser.cart = this.user.cart
+      newUser.total = 0;
 
-    //Call the menu service to edit the current user so the dish is added to their cart
-    this.menuService.updateUser(this.user.userId, newUser).subscribe({
-      next:(res) => {
-        //Display a success message stating that the item has been added to the cart
-        this.successMessage = dish.name + " has been added to your cart"
+      //Determine if the user's cart already contains the item being added
+      if (newUser.cart.some(item => item.name === dish.name)) {
+        //Locate the index of the matching item in the user's cart
+        const i = newUser.cart.findIndex(item => item.name === dish.name);
 
-        //Hide the successMessage alert
-        this.hideAlert();
-      },
-      // Error handling
-      error: (err) => {
-        console.log('error', err);
-        this.errorMessage = err.message;
-        if (err = new Error('Unable to add item to cart') ) {
-          this.errorMessage = 'Item not added to cart';
+        //Increment the quantity of the item in the user's cart
+        newUser.cart[i].quantity++;
+        console.log("Quantity incremented")
+
+        //Update the total
+        for(let item of newUser.cart){
+          newUser.total = newUser.total + (item.price * item.quantity)
         }
-        //Hide the error message
-        this.hideAlert();
+      } else {
+        //Otherwise, add the new item to the user's cart
+        newUser.cart.push(dish);
+
+        //Update the total
+        for(let item of newUser.cart){
+          newUser.total = newUser.total + (item.price * item.quantity)
+        }
       }
-    })
+
+      //Call the menu service to edit the current user so the dish is added to their cart
+      this.menuService.updateUser(this.user.userId, newUser).subscribe({
+        next:(res) => {
+
+          if(dish.type == "appetizer"){
+            //Display a success message stating that the item has been added to the cart
+            this.appSuccessMessage = dish.name + " has been added to your cart"
+          } else if (dish.type == "entree"){
+            //Display a success message stating that the item has been added to the cart
+            this.entSuccessMessage = dish.name + " has been added to your cart"
+          } else {
+            //Display a success message stating that the item has been added to the cart
+            this.desSuccessMessage = dish.name + " has been added to your cart"
+          }
+
+
+          //Hide the successMessage alert
+          this.hideAlert();
+        },
+        // Error handling
+        error: (err) => {
+          console.log('error', err);
+          this.errorMessage = err.message;
+          if (err = new Error('Unable to add item to cart') ) {
+            this.errorMessage = 'Item not added to cart';
+          }
+          //Hide the error message
+          this.hideAlert();
+        }
+      })
+    }
   }
 
-    // Set a timeout for alert displays
-    hideAlert() {
-      setTimeout( () => {
-        this.errorMessage = '';
-        this.successMessage= '';
-      }, 5000)
-    }
+  // Set a timeout for alert displays
+  hideAlert() {
+    setTimeout( () => {
+      this.errorMessage = '';
+      this.appSuccessMessage= '';
+      this.entSuccessMessage= '';
+      this.desSuccessMessage= '';
+    }, 5000)
+  }
 }

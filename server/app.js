@@ -13,6 +13,7 @@ const path = require('path')
 //Require routing
 const menuRoute = require('./routes/menu');
 const securityRoute = require("./routes/security");
+const cartRoute = require("./routes/cart")
 
 // Create the Express app
 const app = express()
@@ -23,9 +24,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../dist/webdevgrill')))
 app.use('/', express.static(path.join(__dirname, '../dist/webdevgrill')))
 
-
+//Use routing files for API
 app.use("/api/menu", menuRoute)
 app.use("/api/security", securityRoute);
+app.use("/api/cart", cartRoute);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {

@@ -1,0 +1,169 @@
+@import '../../styles.scss';
+
+.cart-container{
+  background-color: #FDFDFD;
+  font-family: "Inter", sans-serif;
+  padding-top: 2%;
+  height: 100vh;
+}
+
+h1{
+  font-family: "Archivo Narrow", sans-serif;
+  color: #092671;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.status{
+  font-size: 1.2rem;
+  margin-top: 5%;
+}
+
+.main-cart{
+  background-color: white;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-item{
+  grid-template-columns: 1fr 3fr;
+  display: grid;
+  width: 100%;
+  margin: 1% auto;
+  border-bottom: #E05210 solid 2px;
+  padding-bottom: 1%;
+}
+
+.photo{
+ padding: 13% 5% 0 5%;
+}
+
+.item-name, .item-price{
+  font-size: 1.3rem;
+}
+
+.item-price{
+  margin-right: 10%;
+}
+
+.item-body{
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  row-gap: 4%;
+  padding: 5%;
+}
+
+.name-price{
+  display: flex;
+}
+
+input{
+  width: 30%;
+}
+
+.quantity-delete{
+  display: flex;
+  margin-left: 27%;
+}
+
+.material-icons{
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+}
+
+.qfield{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  font-size: 1rem;
+}
+
+button{
+  height: 2rem;
+  background-color: #092671;
+  color: white;
+  cursor: pointer;
+  border:#092671 1px solid;
+}
+
+.add{
+  background-color: #092671;
+  color: white;
+  cursor: pointer;
+  width: 30%;
+}
+
+.total-div{
+  background-color: white;
+  font-size: 1.3rem;
+  margin-top: 2%;
+  margin-left: 15%;
+}
+
+.sub{
+  font-size: 1rem;
+}
+
+.orderTotal{
+  font-weight:700;
+}
+
+
+@media (max-width: 950px) {
+  .cart-item{
+    width: 95%;
+  }
+
+  .item-name, .item-price{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item{
+    width: 100%;
+  }
+
+  .item-name, .item-price{
+    font-size: 1rem;
+  }
+
+  .photo{
+    padding-bottom: 10%;
+  }
+
+  img{
+    width: 75px;
+    height: 50px;
+  }
+
+  .quantity-delete{
+    margin-left: 18%;
+  }
+
+  .add{
+    padding: 5%;
+    width: 45%;
+  }
+}
+
+@media (min-width: 995px){
+  .two-col{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .total-div{
+    width: 100%;
+    margin-top: 2%;
+    border-left:#E05210 solid 2px;
+    padding-left: 4%;
+    margin-left: 0;
+  }
+
+  .two-col{
+    margin-bottom: 20%;
+  }
+}

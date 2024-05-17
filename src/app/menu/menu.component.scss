@@ -1,127 +1,193 @@
 @import '../../styles.scss';
 
 .menu-container{
-  background-color: #E8E8E8;
-  font-family: "Bree Serif", serif;
-}
-
-.our-menu{
-  margin-left: 43%;
-  font-size: 58px;
+  background-color: #FDFDFD;
+  font-family: "Archivo Narrow", sans-serif;
 }
 
 .menu-section{
-  margin-bottom: 5%;
 }
 
-.blue{
-  color: #008AD4;
+.block{
+  display: block;
 }
 
-.green{
-  color: #009717;
+.success-cont{
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.orange{
-  color: #E05210
+.successAlert{
+  background-color: white;
+  border:#092671 5px solid;
+  font-family:"Inter", sans-serif;
+  width: 70%;
+}
+
+.our-menu{
+  font-size: 3rem;
+}
+
+h1{
+  color: #092671;
+  font-size: 2rem;
+}
+
+.course-head{
+  border-bottom:#E05210 solid 2px;
+  width: 25%;
+  padding-bottom: 10px;
+}
+
+.section-header{
+  padding-left: 3%;
 }
 
 .app-card{
   background-color: white;
   padding-bottom: 1%;
-  border:#008AD4 solid 10px;
   border-radius: 5px;
 }
 
 .entree-card{
-  background-color: white;
   padding-bottom: 1%;
-  border:#009717 solid 10px;
-  border-radius: 5px;
 }
 
 .dessert-card{
-  background-color: white;
   padding-bottom: 1%;
-  border:#E05210 solid 10px;
-  border-radius: 5px;
-}
-
-.course-head{
-  margin-left: 23%;
-  margin-bottom: 1%;
-  font-size: 64px;
 }
 
 h2{
-  font-size: 38px;
+  font-size: 1.8rempx;
 }
 
 img{
-  height: 95%;
-  width: 95%;
+  height: 65%;
+  width: 65%;
 }
 
 p{
-  font-size: 24px;
+  font-size: 1.2rem;
+}
+
+.add{
+  cursor: pointer;
 }
 
 .app-button{
-  background-color: #008AD4;
+  background-color: #092671;
   color: white;
   padding: 3%;
   width: 40%;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .entree-button{
-  background-color: #009717;
+  background-color: #092671;
   color: white;
   padding: 3%;
   width: 40%;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .dessert-button{
-  background-color: #E05210;
+  background-color: #092671;
   color: white;
   padding: 3%;
   width: 40%;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .responsive-card{
-  @media screen and (max-width: $xs) {
-    width: 31%;
+  @media (min-width: $xxs) {
+    width: 90%;
+    margin-bottom: 3%;
   }
-  @media screen and (min-width: $sm) {
-    width: 30%
+
+  @media (min-width: $xs) {
+    width: 90%;
+    margin-bottom: 3%;
   }
-  @media screen and (max-width: $md) {
+  @media (min-width: $sm) {
+    width: 45%;
+    margin-bottom: 3%;
+  }
+  @media (min-width: $md) {
+    width: 30%;
+  }
+  @media (min-width: $lg) {
     width: 28%;
   }
-  @media screen and (min-width: $lg) {
+  @media (min-width: $xl) {
     width: 28%;
-  }
-  @media screen and (min-width: $xl) {
-    width: 27%;
   }
 }
 
-h1{
-  @media screen and (max-width: $xs) {
-    color: yellow;
+@media (min-width: $xxs) {
+
+  .course-head{
+    margin-left: 2%;
+    margin-bottom: 1%;
   }
-  @media screen and (min-width: $sm) {
-    color: purple;
+}
+
+@media (min-width: $xs) {
+
+  .course-head{
+    margin-left: 3%;
+    margin-bottom: 1%;
   }
-  @media screen and (max-width: $md) {
-    color: red;
+
+  .course-head{
+    font-size: 2.5rem;
   }
-  @media screen and (min-width: $lg) {
-    color: green
+}
+
+@media (min-width: $sm) {
+
+  .course-head{
+    margin-left: 1%;
+    margin-bottom: 1%;
   }
-  @media screen and (min-width: $xl) {
-    color: blue;
+
+  .course-head{
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: $md) {
+
+
+
+
+}
+
+@media (min-width: $lg) {
+
+  .course-head{
+    margin-left: 4.5%;
+    margin-bottom: 1%;
+
+  }
+
+  h2{
+
+  }
+
+  .add{
+
+  }
+}
+
+@media (min-width: $xl) {
+
+  .course-head{
+    margin-left: 5.5%;
+    margin-bottom: 1%;
+    font-size: 2.5rem;
+  }
+
+  .add{
+    font-size: 1.2rem;
   }
 }

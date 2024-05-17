@@ -1,70 +1,54 @@
+@import '../../styles.scss';
+
 .home{
-  background-color: #E8E8E8;
-  font-family: "Bree Serif", serif;
+  background-color: #FDFDFD;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-.hero{
-  height: 30%;
-}
-
-img{
-
-}
-
-.menu-card{
-  background-color: white;
-}
-
-.option-cards{
- margin-top: 2%
+  padding-bottom: 2%;
 }
 
 p{
-  font-size: 2rem;
+  font-size: 1rem;
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
+.option-cards{
+  border-top:#092671 solid 10px;
+}
+
+.center-card{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .menu-card{
-  border-radius: 7px;
-  border: #008AD4 solid 15px;
+  /*border-bottom: #008AD4 solid 2px;*/
+  border-bottom: #E05210 solid 2px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.section{
+
+}
+
+.row-section{
+  display: flex;
+  align-items: center;
 }
 
 .about-card{
-  border-radius: 7px;
-  border: #009717 solid 15px;
   background-color: white;
 }
 
-.order-card{
-  border-radius: 7px;
-  border: #E05210 solid 15px;
-  background-color: white;
-  margin-top: 4%;
-  margin-bottom: 8%;
-}
-
-.menu-card h1{
-  color: #008AD4;
-  font-size: 3.5rem;
+h1{
+  color: #092671;
+  font-size: 2.5rem;
   font-weight:bolder;
-  padding-top: 8%;
-}
-
-.about-card h1{
-  color: #009717;
-  font-size: 3.5rem;
-  font-weight:bolder;
-  padding-top:8%;
-}
-
-.order-card h1{
-  color: #E05210;
-  font-size: 3.5rem;
-  font-weight:bolder;
-  padding-top: 8%;
+  padding-top: 2%;
+  font-family: "Archivo Narrow", sans-serif;
 }
 
 .about-row{
@@ -74,13 +58,13 @@ p{
 .button-home {
   font-weight: 600;
   margin-top: 3%;
-  background-color: #008AD4;
-  font-family: "Bree Serif", serif;
+  background-color: #092671;
+  font-family: "Inter", sans-serif;
   color: white;
-  margin-bottom: 5%;
-  width: 35%;
-  font-size: 2.5rem;
-  padding: 2%;
+  margin-bottom: 3%;
+  width: 33%;
+  font-size: 1.3rem;
+  padding: 1%;
   border-radius: 10px;
   margin-right: 4%;
 }
@@ -89,12 +73,12 @@ p{
   font-weight: 600;
   margin-top: 3%;
   background-color: #009717;
-  font-family: "Bree Serif", serif;
+  font-family: "Inter", sans-serif;
   color: white;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   width: 35%;
-  font-size: 2.5rem;
-  padding: 2%;
+  font-size: 1.1rem;
+  padding: 1%;
   border-radius: 10px;
   margin-right: 4%;
 }
@@ -103,12 +87,12 @@ p{
   font-weight: 600;
   margin-top: 3%;
   background-color: #E05210;
-  font-family: "Bree Serif", serif;
+  font-family: "Inter", sans-serif;
   color: white;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   width: 40%;
-  font-size: 2.5rem;
-  padding: 2%;
+  font-size: 1.1rem;
+  padding: 1%;
   border-radius: 10px;
   margin-right: 4%;
 }
@@ -118,25 +102,135 @@ p{
 }
 
 
-.photo{
-  height: auto;
-  width: 40%;
-  position: relative;
-}
-
 .card-photo{
-  height: 90%;
-  width: 90%;
-  position: absolute;
-  top: 4%;
+  width: 70%;
+  margin-top: 2%;
 }
 
 .about-photo{
-  height: 90%;
-  width: 90%
+  width: 80%
 }
 
 .order-photo{
-  height: 80%;
-  width: 90%;
+  width: 70%;
+}
+
+.text-start{
+  padding-right: 0;
+}
+
+.something{
+  width: 67%;
+}
+
+
+@media (max-width: $md) {
+  .card-photo{
+    width: 90%;
+    height: 90%;
+  }
+
+  .something{
+    width: 87%;
+  }
+
+  .button-home{
+    font-size: 1.7rem;
+    width: 50%;
+  }
+}
+
+
+@media (max-width: $sm) {
+  p{
+    font-size: 1rem;
+  }
+
+  h1{
+    font-size: 1.7rem;
+  }
+
+  .card-photo{
+    width: 100%;
+    height: 90%;
+  }
+
+  .something{
+    width: 97%;
+  }
+
+  .button-home{
+    font-size: 1.3rem;
+    width: 50%;
+  }
+}
+
+@media (max-width: 560px) {
+  .card-photo{
+    width: 100%;
+    height: 60%;
+    margin-top: 20%;
+  }
+
+  .something{
+    width: 97%;
+  }
+}
+
+@media (max-width: $xs) {
+  p{
+    font-size: .8rem;
+  }
+
+  h1{
+    font-size: 1.5rem;
+  }
+
+  .card-photo{
+    width: 100%;
+    height: 40%;
+    margin-top: 50%;
+  }
+
+  .something{
+    width: 97%;
+  }
+
+  .button-home{
+    font-size: 1rem;
+    width: 55%;
+  }
+}
+
+@media (max-width: 360px) {
+  p{
+    font-size: .6rem;
+  }
+
+  h1{
+    font-size: 1.3rem;
+  }
+
+  .card-photo{
+    width: 100%;
+    height: 40%;
+    margin-top: 60%;
+  }
+
+  .something{
+    width: 85%;
+  }
+
+  .button-home{
+    font-size: .8rem;
+    width: 60%;
+  }
+}
+
+@media (min-width: $lg) {
+
+}
+
+@media (min-width: $xl) {
+
 }
