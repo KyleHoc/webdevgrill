@@ -1,0 +1,101 @@
+.order-container{
+  font-family: "Inter", sans-serif;
+  padding-bottom: 55vh;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+h1{
+  font-family: "Archivo Narrow", sans-serif;
+  color: #092671;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.order-card{
+  background-color: white;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border: #E05210 solid 1px;
+  margin-bottom: 3%;
+}
+
+.date-row{
+  text-align: center;
+  display: flex;
+  border-bottom: #E05210 solid 1px;
+  padding: .5% 0 .5% 0;
+}
+
+.order-heading{
+  flex: .5;
+  vertical-align: middle;
+}
+
+.order-item{
+  display: flex;
+  padding-left: 2%;
+}
+
+.col{
+  flex: 1;
+}
+
+.quantity{
+  margin-left: 2%;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+img{
+  height: 50px;
+  width: 50px;
+}
+
+.order-item{
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.label{
+  font-weight: bold;
+}
+
+.total-row{
+  text-align: center;
+  display: flex;
+  border-top: #E05210 solid 1px;
+  padding: .5% 0 .5% 0;
+}
+.final-row{
+  text-align: center;
+  display: flex;
+  padding: .5% 0 .5% 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.no-orders{
+  margin-top: 2%;
+  margin-right: 1%;
+  min-height: 30vh;
+}
+
+@media (max-width: 950px) {
+  .order-card{
+    width: 95%;
+    font-size: .8rem;
+    margin-bottom: 10%;
+  }
+
+  .final-row{
+    font-size: .9rem;
+  }
+}

@@ -1,0 +1,40 @@
+.container, .main{
+  background-color: #FDFDFD;
+  height: 100%;
+  padding-bottom: 21vh;
+}
+
+.container, .links{
+  background-color: #FDFDFD;
+}
+
+.home-content{
+  padding: 3% 2% 6% 4%;
+  display: grid;
+  grid-template-columns: .8fr 3fr;
+  gap: 0;
+}
+
+.info{
+  font-family: "Inter", sans-serif;
+  margin-top: 1%;
+}
+
+h1{
+  font-family: "Archivo Narrow", sans-serif;
+  color: #092671;
+  font-size: 2.4rem;
+  font-weight: bold;
+
+}
+
+.para{
+  margin-top: 1%;
+  width: 64%;
+  margin-right: 5%;
+}
+
+p{
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+}

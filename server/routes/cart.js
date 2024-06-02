@@ -162,59 +162,41 @@ router.put("/:userId/:dishName/:operation", (req, res, next) => {
   }
 })
 
-const orderSchema = {
-  type: 'object',
-  properties: {
-    userId: { type: 'string' },
-    items: { type: 'array' }
-  },
-  required: [
-    'userId',
-    'items'
-  ],
-  additionalProperties: false
-}
 
 //submit order API
 router.post('/:userId', (req, res, next) => {
   try {
     //Store the cart object from the request body, and covert it to an object
     let items = req.body;
+    let total = 0;
+    let temp = 0;
 
-  //   //Create an empty array for storing items
-  //   let itemArray = [];
-
-  //   //Create an empty item object to store data for each item that will go on the array
-  //   let item = {};
-
-  //   //Loop through the items and create an array containing items
-  //   items.orders.forEach((element, index, array) => {
-  //     item = {name: element.name, price: element.price, quantity: element.quantity, imageSource: element.imageSource};
-  //     itemArray.push(item);
-  // });
+    //Calculate the total price of all items in the order
+    items.orders.forEach(function (item){
+      temp = item.quantity * item.price;
+      total = total + parseFloat(temp);
+    })
 
     //Store userId from request params
     let { userId } = req.params
 
-    //Create an order object
-    let order = {userId: userId, items: items.orders};
-
-    //determine if the order data matches the required schema
-    const validate = ajv.compile(orderSchema);
-    const isValid = validate(order);
-
-    //if provided invoice data doesn't match the required invoiceSchema
-    if (!isValid) {
-      //400 message
-      res.status(400).json({
-        message: 'Bad Request',
-        errors: validate.errors,
-      });
-      return;
-    }
+    //Create an order object with a default order id
+    let order = {userId: userId, items: items.orders, orderTime: new Date().toLocaleString('en-US', { timeZoneName: 'short' }), total: total, orderId: 1111};
 
     //connect to database
     mongo(async (db) => {
+      //Write a query to find the document with the highest order id
+      const highestId = await db.collection('orders').find().sort({orderId:-1}).limit(1).toArray();
+
+      //Increment the highest id number and save the result as a variable
+      let id = highestId[0].orderId + 1;
+
+      //If a highest order ID can be found:
+      if(Number.isInteger(highestId[0].orderId)){
+        //Create an order object that increments the current highest order id
+        order = {userId: userId, items: items.orders, orderTime: new Date().toLocaleString('en-US', { timeZoneName: 'short' }), total: total, orderId: id};
+      }
+
       //Insert the order into the database
       const result = await db.collection('orders').insertOne(order);
 

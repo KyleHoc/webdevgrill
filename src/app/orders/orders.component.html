@@ -1,0 +1,58 @@
+<div class="order-container text-center">
+  <h1>Your Orders</h1>
+
+  <div *ngIf="orders.length == 0" class="no-orders">
+    You have no orders
+  </div>
+
+  <div class="order-card" *ngFor="let order of orders; let i=index">
+
+    <div class="date-row">
+      <div class="order-heading">Order #: {{ orderData[i][3] }}</div>
+      <div class="order-heading">Date Placed: {{ orderData[i][0] }}</div>
+    </div>
+
+    <div class="order-content" *ngFor="let item of order">
+      <div class="row order-item">
+        <div class="col image">
+          <img src="{{item.imageSource}}" alt="{{item.description}}">
+        </div>
+
+        <div class="col name">
+          <div class="row label">
+            Item:
+          </div>
+          <div class="row">
+            {{ item.name }}
+          </div>
+        </div>
+
+        <div class="col quantity">
+          <div class="row label">
+            Qty.
+          </div>
+          <div class="row">
+            x{{ item.quantity }}
+          </div>
+        </div>
+
+        <div class="col price">
+          <div class="row label">
+            Price:
+          </div>
+          <div class="row">
+            ${{ item.price * item.quantity }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="total-row">
+      <div class="order-heading">Subtotal: ${{ orderData[i][1].toFixed(2) }}</div>
+      <div class="order-heading">Sales Tax: ${{ (orderData[i][2] - orderData[i][1]).toFixed(2)}}</div>
+    </div>
+    <div class="final-row">
+      <div class="order-heading">Order Total: ${{ orderData[i][2] }}</div>
+    </div>
+  </div>
+</div>

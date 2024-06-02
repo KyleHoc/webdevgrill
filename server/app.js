@@ -14,6 +14,7 @@ const path = require('path')
 const menuRoute = require('./routes/menu');
 const securityRoute = require("./routes/security");
 const cartRoute = require("./routes/cart")
+const ordersRoute = require("./routes/orders")
 
 // Create the Express app
 const app = express()
@@ -28,6 +29,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/webdevgrill')))
 app.use("/api/menu", menuRoute)
 app.use("/api/security", securityRoute);
 app.use("/api/cart", cartRoute);
+app.use("/api/orders", ordersRoute);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {

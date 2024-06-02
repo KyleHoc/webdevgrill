@@ -1,6 +1,10 @@
+@import '../../../styles.scss';
+
+
 .signin-container{
   background-color: #E8E8E8;
   font-family:"Archivo Narrow", sans-serif;
+  height: 100%;
 }
 
 h2{
@@ -55,4 +59,14 @@ input{
 .form-content{
   margin-left: auto;
   margin-right: auto;
+}
+
+.form-control{
+  width: 90%;
+}
+
+@media (max-width: $sm) {
+  h2{
+    font-size: 2rem;
+  }
 }

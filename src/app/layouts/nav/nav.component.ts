@@ -40,7 +40,6 @@ export class NavComponent {
       this.appUser = {
         fullName: this.cookieService.get('session_name'),
       }
-      console.log(this.appUser.fullName)
     }
   }
 

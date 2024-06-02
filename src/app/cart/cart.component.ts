@@ -78,8 +78,6 @@ export class CartComponent {
         },
 
         complete: () => {
-          //Output the user's name when successful
-          console.log(this.user.firstName)
         }
       })
     }

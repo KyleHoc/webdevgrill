@@ -17,6 +17,8 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
+import { OrdersComponent } from './orders/orders.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CartComponent } from './cart/cart.component';
     NavComponent,
     FooterComponent,
     MenuComponent,
-    CartComponent
+    CartComponent,
+    OrdersComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

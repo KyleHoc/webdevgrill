@@ -11,6 +11,8 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
+import { OrdersComponent } from './orders/orders.component';
+import { AboutComponent } from './about/about.component';
 
 // routes array with a path, component, and title for each route in the application (e.g. home, about, contact, etc.)
 const routes: Routes = [
@@ -37,6 +39,16 @@ const routes: Routes = [
         path: 'cart',
         component: CartComponent,
         title: "Web Dev Grill: Your Cart"
+      },
+      {
+        path: 'orders',
+        component: OrdersComponent,
+        title: "Web Dev Grill: Your Orders"
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        title: "Web Dev Grill: About Us"
       }
     ]
   },
