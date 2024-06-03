@@ -6,13 +6,6 @@
   min-height: 100vh;
 }
 
-.menu-section{
-}
-
-.block{
-  display: block;
-}
-
 .banner-attribution{
   background-color:#092671;
   color: white;
@@ -87,24 +80,6 @@ p{
 }
 
 .app-button{
-  background-color: #092671;
-  color: white;
-  padding: 3%;
-  width: 40%;
-  font-size: 16px;
-  border-radius: 7px;
-}
-
-.entree-button{
-  background-color: #092671;
-  color: white;
-  padding: 3%;
-  width: 40%;
-  font-size: 16px;
-  border-radius: 7px;
-}
-
-.dessert-button{
   background-color: #092671;
   color: white;
   padding: 3%;
@@ -192,26 +167,11 @@ p{
   }
 }
 
-@media (min-width: $md) {
-
-
-
-
-}
-
 @media (min-width: $lg) {
 
   .course-head{
     margin-left: 4.5%;
     margin-bottom: 1%;
-
-  }
-
-  h2{
-
-  }
-
-  .add{
 
   }
 }
